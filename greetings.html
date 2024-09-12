@@ -21,6 +21,10 @@
             font-size: 24px;
             font-weight: bold;
         }
+
+        strong {
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -48,9 +52,5 @@
         greet = 'good evening';
     }
 
-    // Set the content with periods
-    document.getElementById('date').textContent = `${dayOfWeek}, ${month} ${day}, ${year}.`;
-    document.getElementById('greeting').textContent = greet + '.';
-</script>
-</body>
-</html>
+    // Set the content with periods and bold the day of the week and date
+    document.getElementById('date').innerHTML = `<strong>${dayOfWeek}</
