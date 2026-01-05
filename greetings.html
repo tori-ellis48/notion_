@@ -12,7 +12,7 @@
         #date, #greeting {
             font-size: 17px;
             color: #eb7a7a;
-            margin-bottom: 5px;
+            margin-bottom: 4px;
             text-transform: lowercase;
             text-align: left;
         }
@@ -48,8 +48,23 @@
         greet = 'good evening';
     }
 
+    function getOrdinal(n) {
+        if (n % 100 >= 11 && n % 100 <= 13) {
+            return n + 'th';
+        }
+
+        switch (n % 10) {
+            case 1: return n + 'st';
+            case 2: return n + 'nd';
+            case 3: return n + 'rd';
+            default: return n + 'th';
+        }
+    }
+
+    const dayWithOrdinal = getOrdinal(day);
+
     // Set the content with periods
-    document.getElementById('date').textContent = `${dayOfWeek}, ${month} ${day}, ${year}`;
+    document.getElementById('date').textContent = `${dayOfWeek}, ${month} ${dayWithOrdinal}`;
     document.getElementById('greeting').textContent = greet + '.';
 </script>
 </body>
