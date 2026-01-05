@@ -1,0 +1,61 @@
+<html> 
+<head>
+    <title>Greeting Message</title> 
+    <style>
+        body {
+            background-color: white;
+            font-family: 'Helvetica', sans-serif;
+            margin: 0;
+            padding: 15px;
+        }
+
+        #date, #greeting {
+            font-size: 17px;
+            font-weight: bold;
+            color: #80b2e0;
+            text-transform: lowercase;
+            text-align: left;
+        }
+
+        #greeting {
+            font-size: 25px;
+            margin-bottom: 5px;
+        }
+        
+        #date {
+            margin-bottom: 0px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div id="greeting"></div>
+    <div id="date"></div>
+
+<script>
+    const weekday = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
+    const monthNames = ["january", "february", "march", "april", "may", "june", "july", "august", "september", "october", "november", "december"];
+
+    const today = new Date();
+    const dayOfWeek = weekday[today.getDay()];
+    const month = monthNames[today.getMonth()];
+    const day = today.getDate();
+    const year = today.getFullYear();
+
+    const hrs = today.getHours();
+    let greet;
+
+    if (hrs < 12) {
+        greet = 'good morning';
+    } else if (hrs >= 12 && hrs <= 17) {
+        greet = 'good afternoon';
+    } else {
+        greet = 'good evening';
+    }
+
+    // Set the content with periods
+    document.getElementById('date').textContent = `${dayOfWeek}, ${month} ${day}, ${year}`;
+    document.getElementById('greeting').textContent = greet;
+</script>
+</body>
+</html>
