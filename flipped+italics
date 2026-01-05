@@ -12,7 +12,7 @@
         #date, #greeting {
             font-size: 17px;
             font-weight: bold;
-            color: #80b2e0;
+            color: #eb7a7a;
             text-transform: lowercase;
             text-align: left;
         }
